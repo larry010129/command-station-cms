@@ -8,6 +8,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --port 1430 --strictPort",
     "seed": "node scripts/seed-draft.mjs",
+    "sync:releases": "node scripts/sync-releases.mjs",
     "publish:check": "node --input-type=module -e \"import { ensureDataLayout, publish, currentInfo } from './server/store.mjs'; ensureDataLayout(); console.log(JSON.stringify({ before: currentInfo(), result: publish() }, null, 2))\"",
     "tauri": "tauri",
     "prepare:desktop": "node scripts/prepare-desktop.mjs",
