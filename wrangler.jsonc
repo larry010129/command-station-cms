@@ -16,11 +16,9 @@
       "migrations_dir": "migrations"
     }
   ],
-  // Filled in after Cloudflare Access is created. Empty means every /api call is refused (401).
+  // Dashboard-set variables (ACCESS_TEAM_DOMAIN, ACCESS_AUD, ALLOWED_EMAILS) and the SIGNING_KEY secret survive deploys.
+  "keep_vars": true,
   "vars": {
-    "ACCESS_TEAM_DOMAIN": "",
-    "ACCESS_AUD": "",
-    "ALLOWED_EMAILS": "",
-    "PUBLIC_KEY": ""
+    "PUBLIC_KEY": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAan8+LuhMQE917GeaCqJisDHujxEMg7KDXtsufefwP4g=\n-----END PUBLIC KEY-----"
   }
 }
