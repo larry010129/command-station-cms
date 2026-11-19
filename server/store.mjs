@@ -14,7 +14,10 @@ import {
   RELEASES_DIR,
   UPLOADS_DIR,
 } from "./paths.mjs";
+import { SCHEDULE_GRACE_MS, scheduleErrors } from "./schedule.mjs";
 import { validateBundle } from "./validate.mjs";
+
+export { SCHEDULE_GRACE_MS, scheduleErrors };
 
 const BANNER_EXTS = new Set([".png", ".jpg", ".jpeg", ".webp", ".gif"]);
 const BANNER_MIME = {
@@ -272,22 +275,6 @@ export function publish(opts = {}) {
     effectiveAt,
     manifestPath: `/releases/${number}/manifest.json`,
   };
-}
-
-/** Grace for clock drift and slow clicks: a go-live time this far in the past still counts as "now". */
-export const SCHEDULE_GRACE_MS = 2 * 60_000;
-
-/**
- * A Push must say when it goes live: an ISO time no earlier than now (minus the grace). Returns the errors, if any.
- * @param {unknown} effectiveAt
- * @param {number} [now]
- */
-export function scheduleErrors(effectiveAt, now = Date.now()) {
-  if (effectiveAt == null || effectiveAt === "") return ["Choose when this release goes live (mm/dd/yy hh:mm)."];
-  const t = Date.parse(String(effectiveAt));
-  if (!Number.isFinite(t)) return ["The go-live time is not a valid date and time."];
-  if (t < now - SCHEDULE_GRACE_MS) return ["The go-live time is in the past. Pick now or a later time."];
-  return [];
 }
 
 /** Re-publish an older release as a newer number (rollback). */

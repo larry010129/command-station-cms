@@ -21,3 +21,7 @@ data/releases/current.json
 # Optional uploaded assets for a draft
 data/assets/
 data/uploads/
+
+# Local Worker secrets
+.dev.vars
+.wrangler/
