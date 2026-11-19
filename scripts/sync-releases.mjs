@@ -9,7 +9,7 @@ if (!existsSync(repo + ".git")) {
   console.error("Clone command-station-releases next to this folder first.");
   process.exit(1);
 }
-const dest = repo + "releases/";
+const dest = repo + "public/releases/";
 rmSync(dest, { recursive: true, force: true });
 mkdirSync(dest, { recursive: true });
 for (const name of ["current.json", "by-number", "blobs"]) {
