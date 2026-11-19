@@ -1,0 +1,23 @@
+# dependencies and build output
+node_modules/
+dist/
+.vite/
+src-tauri/target/
+src-tauri/gen/
+src-tauri/stage/
+*.zip
+*.exe
+*.msi
+*.log
+.env
+.env.*
+!.env.example
+# Signing secrets
+data/keys/*.pem
+# Published local releases (keep data/example/ + README)
+data/releases/by-number/
+data/releases/blobs/
+data/releases/current.json
+# Optional uploaded assets for a draft
+data/assets/
+data/uploads/
