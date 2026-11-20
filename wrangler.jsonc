@@ -16,9 +16,11 @@
       "migrations_dir": "migrations"
     }
   ],
-  // Dashboard-set variables (ACCESS_TEAM_DOMAIN, ACCESS_AUD, ALLOWED_EMAILS) and the SIGNING_KEY secret survive deploys.
+  // The SIGNING_KEY secret and any extra dashboard variables (e.g. ALLOWED_EMAILS) survive deploys.
   "keep_vars": true,
   "vars": {
+    "ACCESS_TEAM_DOMAIN": "lucky-wind-19c4.cloudflareaccess.com",
+    "ACCESS_AUD": "284ca174fe6c45af4aa0eaf6af07090263b0a0d3aeb8e3d7ca2df4780fe904b1",
     "PUBLIC_KEY": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAan8+LuhMQE917GeaCqJisDHujxEMg7KDXtsufefwP4g=\n-----END PUBLIC KEY-----"
   }
 }
