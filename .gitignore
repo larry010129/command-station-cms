@@ -25,3 +25,6 @@ data/uploads/
 # Local Worker secrets
 .dev.vars
 .wrangler/
+.claude/settings.local.json
+.claude/worktrees/
+!.env.production
